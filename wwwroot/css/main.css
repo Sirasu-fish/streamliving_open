@@ -1,0 +1,71 @@
+:root {
+    --color-primary: #1D4ED8;
+    --color-sub1: #67E8F9;
+    --color-sub2: #D8B4FE;
+    --color-accent: #EA580C;
+    --color-msg: #f13232;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-light-gray: #cccccc;
+    --color-dark-gray: #888888;
+}
+
+/* List */
+
+main.content {
+    padding: 0;
+}
+
+div.list_twitter {
+    margin-left: 5px;
+}
+
+div.list_twitch {
+    margin-left: 5px;
+}
+
+div.list_twitter div {
+    margin-left: 10px;
+}
+
+div.list_twitch div {
+    margin-left: 10px;
+}
+
+a.twitch_auth_btn,
+a.twitch_dis_auth_btn {
+    border-radius: 5px;
+    background-color: #6441A5;
+    padding: 5px 10px;
+    margin: 0 0 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a.twitter_dis_auth_btn {
+    border-radius: 5px;
+    background-color: #1DA1F2;
+    padding: 5px 10px;
+    margin: 0 0 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.small {
+    font-size: 8px;
+}
+
+/* Index */
+ul.content_list {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    height: 90%;
+    margin: 0;
+    padding: 0;
+}
+
+ul.content_list ul{
+    height: 100%;
+    padding-left: 0;
+}

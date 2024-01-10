@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://localhost/css/container.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://localhost/css/main.css" asp-append-version="true" />
+    <script type="text/javascript" src="https://localhost/js/jquery-3.6.3.min.js"></script>
+    @RenderSection("script", false)
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+    </div>
+</body>
+</html>

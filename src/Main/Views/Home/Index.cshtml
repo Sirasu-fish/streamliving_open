@@ -1,0 +1,290 @@
+﻿@using Main.Api.Twitter.Dto;
+@{
+    ViewData["Title"] = "トップページ";
+}
+
+@section script{
+    <link rel="stylesheet" href="https://localhost/css/left_nav.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://localhost/css/modal.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://localhost/css/modal-about.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://localhost/css/modal-streamer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://localhost/css/twitter.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://localhost/css/schedule.css" asp-append-version="true" />
+    <script defer src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script defer type="text/javascript" src="https://localhost/js/main.js"></script>
+    <script defer type="text/javascript" src="https://localhost/js/streamer.js"></script>
+    <script defer type="text/javascript" src="https://localhost/js/about.js"></script>
+    <script defer type="text/javascript" src="https://localhost/js/twitter.js"></script>
+    <script defer type="text/javascript" src="https://localhost/js/live.js"></script>
+}
+
+<div class="left_nav">
+    <div class="left_nav_setting">
+        <div class="modal-open about">このサイトについて</div>
+    </div>
+    @for (int i = 1; i <= 5; i++)
+    {
+        <input type="hidden" value="@ViewData["youtube_" + @i]" class="left_nav_youtube_id">
+        <input type="hidden" value="@ViewData["twitch_" + @i]" class="left_nav_twitch_id">
+    }
+    <div class="left_nav-online">
+        <h4 class="left_nav-online-title">オンライン</h4>
+        <div class="left_nav-online-list">
+            <ul class="left_nav-online-list-js">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    <li class="left_nav-online-list-js-item @i" style="display: none;">
+                        @if (ViewData["name_" + @i] != null)
+                        {
+                            <span class="left_nav-online-list-js-item-name">
+                                @ViewData["name_" + @i]
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="left_nav-online-list-js-item-name">
+                            </span>
+                        }
+
+                        <span class="left_nav-online-list-js-item-twitch-js">
+                        @if (ViewData["twitch_" + @i] != null && !string.IsNullOrEmpty(ViewData["twitch_" + @i].ToString()))
+                        {
+                            <a href="https://www.twitch.tv/@ViewData["twitch_" + @i]" target="_blank" rel="noopener noreferrer">
+                                <span class="left_nav-online-list-js-item-twitch false regist"></span>
+                            </a>
+                        }
+                        else
+                        {
+
+                            <span class="left_nav-online-list-js-item-twitch false"></span>
+                        }
+                        </span>
+
+                        <span class="left_nav-online-list-js-item-youtube-js">
+                        @if (ViewData["youtube_" + @i] != null && !string.IsNullOrEmpty(ViewData["youtube_" + @i].ToString()))
+                        {
+                            <a href="https://www.youtube.com/@ViewData["youtube_" + @i]" target="_blank" rel="noopener noreferrer">
+                                <span class="left_nav-online-list-js-item-youtube false regist"></span>
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="left_nav-online-list-js-item-youtube false"></span>
+                        }
+                        </span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="left_nav-offline">
+        <h4 class="left_nav-offline-title">オフライン</h4>
+        <div class="left_nav-offline-list">
+            <ul class="left_nav-offline-list-js">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    @if (ViewData["name_" + @i] == null || string.IsNullOrEmpty(ViewData["name_" + @i].ToString()))
+                    {
+                        <li class="left_nav-offline-list-js-item @i" style="display: none">
+                            @if (ViewData["name_" + @i] != null)
+                            {
+                                <span class="left_nav-offline-list-js-item-name">
+                                    @ViewData["name_" + @i]
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="left_nav-offline-list-js-item-name">
+                                </span>
+                            }
+
+                            <span class="left_nav-offline-list-js-item-twitch-js">
+                                @if (ViewData["twitch_" + @i] != null && !string.IsNullOrEmpty(ViewData["twitch_" + @i].ToString()))
+                                {
+                                    <a href="https://www.twitch.tv/@ViewData["twitch_" + @i]" target="_blank" rel="noopener noreferrer">
+                                        <span class="left_nav-offline-list-js-item-twitch regist"></span>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="left_nav-offline-list-js-item-twitch"></span>
+                                }
+                            </span>
+
+                            <span class="left_nav-offline-list-js-item-youtube-js">
+                                @if (ViewData["youtube_" + @i] != null && !string.IsNullOrEmpty(ViewData["youtube_" + @i].ToString()))
+                                {
+                                    <a href="https://www.youtube.com/@ViewData["youtube_" + @i]" target="_blank" rel="noopener noreferrer">
+                                        <span class="left_nav-offline-list-js-item-youtube regist"></span>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="left_nav-offline-list-js-item-youtube"></span>
+                                }
+                            </span>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="left_nav-offline-list-js-item @i">
+                            @if (ViewData["name_" + @i] != null)
+                            {
+                                <span class="left_nav-offline-list-js-item-name">
+                                    @ViewData["name_" + @i]
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="left_nav-offline-list-js-item-name">
+                                </span>
+                            }
+
+                            <span class="left_nav-offline-list-js-item-twitch-js">
+                                @if (ViewData["twitch_" + @i] != null && !string.IsNullOrEmpty(ViewData["twitch_" + @i].ToString()))
+                                {
+                                    <a href="https://www.twitch.tv/@ViewData["twitch_" + @i]" target="_blank" rel="noopener noreferrer">
+                                        <span class="left_nav-offline-list-js-item-twitch regist"></span>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="left_nav-offline-list-js-item-twitch"></span>
+                                }
+                            </span>
+
+                            <span class="left_nav-offline-list-js-item-youtube-js">
+                                @if (ViewData["youtube_" + @i] != null && !string.IsNullOrEmpty(ViewData["youtube_" + @i].ToString()))
+                                {
+                                    <a href="https://www.youtube.com/@ViewData["youtube_" + @i]" target="_blank" rel="noopener noreferrer">
+                                        <span class="left_nav-offline-list-js-item-youtube regist"></span>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="left_nav-offline-list-js-item-youtube"></span>
+                                }
+                            </span>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<main role="main" class="content">
+    <ul class="content_list">
+        <li class="content_list_schedule">
+            <div class="content_list_schedule_title">配信スケジュール</div>
+            <div class="content_list_schedule_subtitle">
+                <button class="content_list_schedule_subtitle_button-prev" title="1日前">&lt;</button>
+                <span class="content_list_schedule_subtitle_date"></span>
+                <button class="content_list_schedule_subtitle_button-next" title="1日後">&gt;</button>
+            </div>
+            <ul class="content_list_schedule_items">
+            </ul>
+        </li>
+        @for (var i = 1; i <= 5; i++)
+        {
+            <li class="content_list_twitter content_list_twitter_@i">
+                <div class="content_list_twitter_title streamer modal-open @i">
+                    @if (ViewData["name_" + @i] == null)
+                    {
+                        <span>-</span>
+                    }
+                    else
+                    {
+                        @ViewData["name_" + @i]
+                    }
+                </div>
+                @if (ViewData["twitter_" + @i] == null || string.IsNullOrEmpty(ViewData["twitter_" + @i].ToString()))
+                {
+                    <div class="content_list_twitter_subtitle">
+                        -
+                    </div>
+                }
+                else
+                {
+                    <div class="content_list_twitter_subtitle">
+                        <a href="https://twitter.com/@ViewData["twitter_" + @i]"
+                            target="_blank" rel="noopener noreferrer">
+                            <div>
+                                <span>@@</span>
+                                @ViewData["twitter_" + @i]
+                            </div>
+                        </a>
+                    </div>
+                }
+                <input class="content_list_twitter_id" type="hidden" value="@ViewData["twitter_" + @i]" />
+                <ul class="content_list_twitter_items">
+                </ul>
+            </li>
+        }
+    </ul>
+</main>
+
+<div class="modal-container about">
+    <div class="modal-body">
+        <div class="modal-content">
+            <div class="modal-close">×</div>
+            <p>
+                現在の配信状況、ツイート等をまとめて見ることができます。<br />
+                対応サイト：Youtube, Twitch, Twitter<br />
+                製作者：@@say_matane<br />
+                このサイトの利用に際して一切の責任を負いかねます。
+            </p>
+        </div>
+    </div>
+</div>
+
+@for (var i = 1; i <= 5; i++)
+{
+    <div class="modal-container streamer @i">
+        <div class="modal-body">
+            <div class="modal-content">
+                <div class="modal-close">×</div>
+                @if (i == 1)
+                {
+                    <div class="modal-temp"></div>
+                }
+                else
+                {
+                    <div class="modal-prev">&lt;</div>
+                }
+                <div class="streamer">
+                    <table>
+                        <tr>
+                            <th>表示名</th>
+                            <td><input type="text" class="name" value="@ViewData["name_" + @i]" maxlength="256" /></td>
+                        </tr>
+                        <tr>
+                            <th>Twitter</th>
+                            <td><input type="text" class="twitter" value="@ViewData["twitter_" + @i]" maxlength="256" /></td>
+                        </tr>
+                        <tr>
+                            <th>Youtube</th>
+                            <td><input type="text" class="youtube" value="@ViewData["youtube_" + @i]" maxlength="256" /></td>
+                        </tr>
+                        <tr>
+                            <th>Twitch</th>
+                            <td><input type="text" class="twitch" value="@ViewData["twitch_" + @i]" maxlength="256" /></td>
+                        </tr>
+                    </table>
+                    <div class="streamer-footer">
+                        <input type="button" value="削除" class="delete" />
+                        <div class="msg"></div>
+                        <input type="button" value="登録" class="regist" />
+                    </div>
+                </div>
+                @if (i == 5)
+                {
+                    <div class="modal-temp"></div>
+                }
+                else
+                {
+                    <div class="modal-next">&gt;</div>
+                }
+            </div>
+        </div>
+    </div>
+}

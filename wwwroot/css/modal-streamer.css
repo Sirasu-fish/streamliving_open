@@ -1,0 +1,149 @@
+.modal-container.streamer .modal-content {
+    display: flex;
+}
+
+.modal-content .streamer {
+    height: 100%;
+}
+
+.modal-container.streamer .streamer {
+    width: 80%;
+}
+
+.modal-container.streamer table {
+    width: 100%;
+    padding-right: 10px;
+    margin: 0;
+}
+
+.modal-container.streamer table th {
+    width: 20%;
+}
+
+.modal-container.streamer table td {
+    width: 80%;
+}
+
+.modal-container.streamer table td input {
+    width: 100%;
+}
+
+.modal-prev,
+.modal-next,
+.modal-temp {
+    width: 10%;
+    height: 65px;
+    padding: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.modal-prev,
+.modal-next {
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+    color: var(--color-dark-gray);
+    transition: all 0.5s;
+}
+
+.modal-prev:hover {
+    transform: translateX(-5px);
+    color: var(--color-black);
+    transition: all 0.5s;
+}
+
+.modal-next:hover {
+    transform: translateX(5px);
+    color: var(--color-black);
+    transition: all 0.5s;
+}
+
+.streamer-footer {
+    display: flex;
+    width: 100%;
+}
+
+.modal-container.streamer .msg {
+    color: var(--color-msg);
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 232px;
+    font-size: 14px;
+}
+
+.modal-container.streamer .delete,
+.modal-container.streamer .regist {
+    cursor: pointer;
+    width: 60px;
+    height: 25px;
+    font-size: 18px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1),
+                4px 4px 4px rgba(0, 0, 0, 0.2),
+                2px 2px 2px rgba(0, 0, 0, 0.3),
+                -2px -2px 2px rgba(255, 255, 255, 0.4),
+                inset 6px 6px 6px transparent,
+                inset 4px 4px 4px transparent,
+                inset 2px 2px 2px transparent,
+                inset -2px -2px 2px transparent;
+}
+
+.modal-container.streamer .delete {
+    background-color: var(--color-light-gray);
+    color: var(--color-black);
+    transition: all 0.2s ease-out;
+    border: none;
+    border-radius: 5px;
+    margin-right: auto;
+}
+
+.modal-container.streamer .delete:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 6px 6px 6px transparent,
+                4px 4px 4px transparent,
+                2px 2px 2px transparent,
+                -2px -2px 2px transparent,
+                inset 6px 6px 6px rgba(0, 0, 0, 0.1),
+                inset 4px 4px 4px rgba(0, 0, 0, 0.2),
+                inset 2px 2px 2px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 2px rgba(255, 255, 255, 0.4);
+}
+
+.modal-container.streamer .regist {
+    background-color: #f13232;
+    color: #ffffff;
+    transition: all 0.2s ease-out;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-container.streamer .regist:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 6px 6px 6px transparent,
+                4px 4px 4px transparent,
+                2px 2px 2px transparent,
+                -2px -2px 2px transparent,
+                inset 6px 6px 6px rgba(0, 0, 0, 0.1),
+                inset 4px 4px 4px rgba(0, 0, 0, 0.2),
+                inset 2px 2px 2px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 2px rgba(255, 255, 255, 0.4);
+}
+
+.modal-container.streamer .disabled {
+    cursor: default;
+    background-color: #888888;
+    box-shadow: 6px 6px 6px transparent,
+                4px 4px 4px transparent,
+                2px 2px 2px transparent,
+                -2px -2px 2px transparent,
+                inset 6px 6px 6px rgba(0, 0, 0, 0.1),
+                inset 4px 4px 4px rgba(0, 0, 0, 0.2),
+                inset 2px 2px 2px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 2px rgba(255, 255, 255, 0.4);
+}

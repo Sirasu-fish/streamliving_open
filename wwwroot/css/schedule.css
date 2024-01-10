@@ -1,0 +1,32 @@
+li.content_list_schedule {
+    width: 20%;
+    top: 10px;
+    bottom: 10px;
+}
+
+.content_list_schedule_subtitle_date {
+    display: inline-block;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+    margin: 0;
+}
+
+.content_list_schedule_subtitle_button-prev,
+.content_list_schedule_subtitle_button-next {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    background-color: transparent;
+    align-items: center;
+    transition: all 0.3s ease-out;
+    border: solid #777777 1px;
+}
+
+.content_list_schedule_subtitle_button-prev:hover,
+.content_list_schedule_subtitle_button-next:hover {
+    background-color: #aaaaaa;
+    align-items: center;
+    transition: all 0.3s ease-out;
+    border: solid #777777 1px;
+}

@@ -1,0 +1,21 @@
+﻿@{
+	ViewData["Title"] = "/localhost/main/home/Login";
+}
+
+@section script{
+	<link rel="stylesheet" href="https://localhost/css/login.css" asp-append-version="true" />
+}
+
+<main role="main" class="login">
+	<div class="login-twitter">
+		<div class="login-twitter-title">
+			<h2>ログイン</h2>
+		</div>
+		<div class="login-twitter-remarks">
+			<span>機能を利用するにはTwitterのアカウントが必要です。</span>
+		</div>
+		<div class="login-twitter-button">
+			<a href="@ViewData["twitter_authorization_url"]"><img src="https://localhost/img/signinwithtwitter.png" /></a>
+		</div>
+	</div>
+</main>

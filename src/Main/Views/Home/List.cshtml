@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "登録情報一覧";
+}
+
+<main role="main" class="content">
+    <div class="list_twitter">
+        <h3>Twitter</h3>
+        <div>
+            <h4>ログアウト・連携解除</h4>
+            <p>
+                <a href="https://localhost/main/home/List?twitter_revoke=true" class="twitter_dis_auth_btn">ログアウト</a>
+            </p>
+            <p class="small">
+                上手くいかない場合は下記のリンクから<br />
+                『StreamerLiving』のリンク解除を行ってください。<br />
+                <a href="https://twitter.com/settings/connected_apps">https://twitter.com/settings/connected_apps</a>
+            </p>
+        </div>
+    </div>
+    <div class="list_twitch">
+        <h3>Twitch</h3>
+        @if (@ViewData["twitch_connection"].ToString() == "False")
+        {
+            <div>
+                <p>状態：未連携</p>
+                <h4>アカウント連携</h4>
+                <p>
+                    <a href="@ViewData["redirect_url"]" class="twitch_auth_btn">Twitch認証</a>
+                </p>
+            </div>
+        }
+        else
+        {
+            <div>
+                <p>状態：連携済</p>
+                <h4>連携の解除方法</h4>
+                <p>
+                    <a href="https://localhost/main/home/List?twitch_revoke=true" class="twitch_dis_auth_btn">Twitch連携解除</a>
+                </p>
+                <p class="small">
+                    上手くいかない場合は下記のリンクから<br />
+                    『StreamerLiving』のリンク解除を行ってください。<br />
+                    <a href="https://www.twitch.tv/settings/connections">https://www.twitch.tv/settings/connections</a>
+                </p>
+            </div>
+        }
+    </div>
+</main>

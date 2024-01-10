@@ -1,0 +1,127 @@
+div.left_nav {
+    background-color: transparent;
+}
+
+.left_nav-online-title {
+    color: #444444;
+    padding-top: 5px;
+}
+
+.left_nav-offline-title {
+    color: #cccccc;
+}
+
+.left_nav h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.left_nav ul {
+    padding-left: 5px;
+}
+
+.left_nav-online-list li {
+    border: solid #000000 1px;
+    list-style: none;
+    background-color: transparent;
+}
+
+.left_nav-online-list li,
+.left_nav-online-list-js-item-name,
+.left_nav-offline-list-js-item-name,
+.left_nav-online-list-js-item-twitch-js,
+.left_nav-online-list-js-item-youtube-js,
+.left_nav-offline-list-js-item-twitch-js,
+.left_nav-offline-list-js-item-youtube-js,
+.left_nav-online-list-js-item a,
+.left_nav-offline-list-js-item a {
+    height: 42px;
+}
+
+
+.left_nav-offline-list li {
+    border: solid #000000 1px;
+    list-style: none;
+    background-color: #cccccc;
+    margin-bottom: 5px;
+}
+
+.left_nav-online-list-js-item,
+.left_nav-offline-list-js-item {
+    display: flex;
+}
+
+.left_nav-online-list-js-item-name,
+.left_nav-offline-list-js-item-name {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.left_nav-online-list-js-item-twitch,
+.left_nav-online-list-js-item-youtube,
+.left_nav-offline-list-js-item-twitch,
+.left_nav-offline-list-js-item-youtube {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin: 2px;
+}
+
+.left_nav-online-list-js-item .true {
+    border: solid 3px #ff0000;
+    transition: all 0.3s ease-out;
+}
+
+.left_nav-online-list-js-item .true:hover {
+    border: dotted 3px #ff0000;
+    transition: all 0.3s ease-out;
+}
+
+.left_nav-online-list-js-item .false {
+    border: solid 3px transparent; 
+}
+
+.left_nav-offline-list-js-item-twitch,
+.left_nav-offline-list-js-item-youtube {
+    border: dotted 3px transparent;
+    transition: all 0.3s ease-out;
+}
+
+.left_nav-offline-list-js-item-twitch.regist:hover,
+.left_nav-offline-list-js-item-youtube.regist:hover {
+    border: dotted 3px #000000;
+    transition: all 0.3s ease-out;
+}
+
+.left_nav-online-list-js-item a,
+.left_nav-offline-list-js-item a {
+    text-decoration: none;
+}
+
+.left_nav-online-list-js-item-twitch,
+.left_nav-offline-list-js-item-twitch {
+    background-image: url("https://localhost/img/twitch_noregist.png");
+    background-repeat: no-repeat;
+}
+
+.left_nav-online-list-js-item-twitch.regist,
+.left_nav-offline-list-js-item-twitch.regist {
+    background-image: url("https://localhost/img/twitch_regist.png");
+    background-repeat: no-repeat;
+}
+
+.left_nav-online-list-js-item-youtube,
+.left_nav-offline-list-js-item-youtube {
+    background-image: url("https://localhost/img/youtube_noregist.png");
+    background-repeat: no-repeat;
+}
+
+.left_nav-online-list-js-item-youtube.regist,
+.left_nav-offline-list-js-item-youtube.regist {
+    background-image: url("https://localhost/img/youtube_regist.png");
+    background-repeat: no-repeat;
+}
